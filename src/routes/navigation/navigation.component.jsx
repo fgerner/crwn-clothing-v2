@@ -19,20 +19,20 @@ const Navigation = () => {
   return (
     <Fragment>
       <NavigationContainer>
-        <LogoContainer to='/'>
+        <LogoContainer as={Link} to='/'>
           <CrwnLogo className='logo' />
         </LogoContainer>
         <NavLinks>
-          <NavLink to='/shop'>
+          <NavLink as={Link} to='/shop'>
             SHOP
           </NavLink>
 
           {currentUser ? (
-            <NavLink as={'span'} onClick={signOutUser}>
+            <NavLink as='span' onClick={signOutUser}>
               SIGN OUT
             </NavLink>
           ) : (
-            <NavLink to='/auth'>
+            <NavLink as={Link} to='/auth'>
               SIGN IN
             </NavLink>
           )}
