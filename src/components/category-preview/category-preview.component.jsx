@@ -1,8 +1,12 @@
 import './category-preview.styles.scss'
 import ProductCard from "../product-card/product-card.component";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {selectCategoriesMap} from "../../store/categories/category.selector";
 
 const CategoryPreview = ({title, products}) => {
+    const categoriesMap = useSelector(selectCategoriesMap)
+
     return <div className='category-preview-container'>
         <h2>
             <Link to={title} className={'title'}>{title.toUpperCase()}</Link>
